@@ -22,8 +22,8 @@ pipeline {
         }
         stage('Publish') {
             steps {
-                // sh 'mvn clean package -Dmaven.test.skip=true'
-                sh 'mvn package'
+                sh 'mvn clean package -Dmaven.test.skip=true'
+               // sh 'mvn package'
             }
             post {
                 success {
