@@ -29,6 +29,7 @@ pipeline {
                 success {
                     // archiveArtifacts '/aamir/target/*.jar'
                     sh 'aws configure set region ap-south-1'
+                    // 'aamir' is jenkins job name // 's3jenkinsaamir' is bucket name
                     sh 'aws s3 cp /var/lib/jenkins/workspace/aamir/target/my-app-1.0-SNAPSHOT.jar s3://s3jenkinsaamir --region ap-south-1'
 
                 }
