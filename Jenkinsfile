@@ -27,9 +27,9 @@ pipeline {
             }
             post {
                 success {
-                    archiveArtifacts '/target/*.jar'
+                    archiveArtifacts './web/target/*.jar'
                     sh 'aws configure set region ap-south-1'
-                    sh 'aws s3 cp  /target/*.jar s3://s3jenkinsaamir'
+                    sh 'aws s3 cp  ./web/target/*.jar s3://s3jenkinsaamir'
                 }
             }
         }
